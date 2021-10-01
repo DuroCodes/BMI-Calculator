@@ -42,21 +42,14 @@ def imperialBMI():
   BMI = round(703*weightLBS / heightINs**2, 2)
   return BMI
 
-if(UNIT_SYSTEM.lower() in METRIC_LIST):
-  BMI = metricBMI()
-else:
-  BMI = imperialBMI()
+if(UNIT_SYSTEM.lower() in METRIC_LIST): BMI = metricBMI()
+else: BMI = imperialBMI()
 
-if BMI < 16:
-  BMI_INDEX = 1
-elif BMI >= 16 and BMI < 18.5:
-  BMI_INDEX = 2
-elif BMI >= 18.5 and BMI < 25:
-  BMI_INDEX = 3
-elif BMI >= 25 and BMI < 30:
-  BMI_INDEX = 4
-elif BMI > 30:
-  BMI_INDEX = 5
+if BMI < 16: BMI_INDEX = 1
+elif BMI >= 16 and BMI < 18.5: BMI_INDEX = 2
+elif BMI >= 18.5 and BMI < 25: BMI_INDEX = 3
+elif BMI >= 25 and BMI < 30: BMI_INDEX = 4
+elif BMI > 30: BMI_INDEX = 5
 
 sys("clear")
 print(f"\nYour BMI is: {BMI} ({c(BMI_DICTIONARY[BMI_INDEX][0], BMI_DICTIONARY[BMI_INDEX][1])})")
